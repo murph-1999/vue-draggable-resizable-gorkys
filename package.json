@@ -1,7 +1,7 @@
 {
-  "name": "vue-draggable-resizable-gorkys",
-  "version": "2.4.8",
-  "author": "Maurizio Bonani <maurizio.bonani@gmail.com>",
+  "name": "vue-draggable-resizable-zhp",
+  "version": "1.0.0",
+  "author": "Murphy <647694376@qq.com>",
   "main": "dist/VueDraggableResizable.umd.min.js",
   "unpkg": "dist/VueDraggableResizable.umd.min.js",
   "browser": {
@@ -69,13 +69,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gorkys/vue-draggable-resizable-gorkys.git"
+    "url": "https://github.com/murph-1999/vue-draggable-resizable-gorkys.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gorkys/vue-draggable-resizable-gorkys/issues"
+    "url": "https://github.com/murph-1999/vue-draggable-resizable-gorkys/issues"
   },
-  "homepage": "https://github.com/gorkys/vue-draggable-resizable-gorkys",
+  "homepage": "https://github.com/murph-1999/vue-draggable-resizable-gorkys",
   "keywords": [
     "vue",
     "component",
@@ -83,6 +83,8 @@
     "resizable"
   ],
   "dependencies": {
-    "core-js": "^2.6.11"
+    "cache-loader": "^4.1.0",
+    "core-js": "^2.6.11",
+    "element-ui": "^2.15.12"
   }
 }
