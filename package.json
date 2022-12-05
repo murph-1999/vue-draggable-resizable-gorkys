@@ -83,8 +83,6 @@
     "resizable"
   ],
   "dependencies": {
-    "cache-loader": "^4.1.0",
-    "core-js": "^2.6.11",
-    "element-ui": "^2.15.12"
+    "core-js": "^2.6.11"
   }
 }
