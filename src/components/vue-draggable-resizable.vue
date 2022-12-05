@@ -655,13 +655,13 @@ export default {
     moveHorizontally (val) {
       const [deltaX, _] = snapToGrid(this.grid, val, this.top, this.scale)
       const left = restrictToBounds(deltaX, this.bounds.minLeft, this.bounds.maxLeft)
-      this.left = left
+      this.left = val
       this.right = this.parentWidth - this.width - left
     },
     moveVertically (val) {
       const [_, deltaY] = snapToGrid(this.grid, this.left, val, this.scale)
       const top = restrictToBounds(deltaY, this.bounds.minTop, this.bounds.maxTop)
-      this.top = top
+      this.top = val
       this.bottom = this.parentHeight - this.height - top
     },
     // 控制柄移动
@@ -1154,6 +1154,7 @@ export default {
       }
     },
     x (val) {
+      console.log('cur x',val);
       if (this.resizing || this.dragging) {
         return
       }
