@@ -1,6 +1,6 @@
 {
   "name": "vue-draggable-resizable-zhp",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": "Murphy <647694376@qq.com>",
   "main": "dist/VueDraggableResizable.umd.min.js",
   "unpkg": "dist/VueDraggableResizable.umd.min.js",

@@ -656,13 +656,13 @@ export default {
       const [deltaX, _] = snapToGrid(this.grid, val, this.top, this.scale)
       const left = restrictToBounds(deltaX, this.bounds.minLeft, this.bounds.maxLeft)
       this.left = val
-      this.right = this.parentWidth - this.width - left
+      this.right = this.parentWidth - this.width - val
     },
     moveVertically (val) {
       const [_, deltaY] = snapToGrid(this.grid, this.left, val, this.scale)
       const top = restrictToBounds(deltaY, this.bounds.minTop, this.bounds.maxTop)
       this.top = val
-      this.bottom = this.parentHeight - this.height - top
+      this.bottom = this.parentHeight - this.height - val
     },
     // 控制柄移动
     handleResize (e) {
@@ -740,7 +740,8 @@ export default {
       this.$emit('resizing', this.left, this.top, this.width, this.height)
     },
     changeWidth (val) {
-      const [newWidth, _] = snapToGrid(this.grid, val, 0, this.scale)
+      // const [newWidth, _] = snapToGrid(this.grid, val, 0, this.scale)
+      const newWidth = val
       let right = restrictToBounds(
         (this.parentWidth - newWidth - this.left),
         this.bounds.minRight,
@@ -754,11 +755,12 @@ export default {
       const height = computeHeight(this.parentHeight, this.top, bottom)
       this.right = right
       this.bottom = bottom
-      this.width = width
+      this.width = val
       this.height = height
     },
     changeHeight (val) {
-      const [_, newHeight] = snapToGrid(this.grid, 0, val, this.scale)
+      // const [_, newHeight] = snapToGrid(this.grid, 0, val, this.scale)
+      const newHeight = val
       let bottom = restrictToBounds(
         (this.parentHeight - newHeight - this.top),
         this.bounds.minBottom,
@@ -768,12 +770,15 @@ export default {
       if (this.lockAspectRatio) {
         right = this.right - (this.bottom - bottom) * this.aspectFactor
       }
+
+
       const width = computeWidth(this.parentWidth, this.left, right)
       const height = computeHeight(this.parentHeight, this.top, bottom)
+
       this.right = right
       this.bottom = bottom
       this.width = width
-      this.height = height
+      this.height = val
     },
     // 从控制柄松开
     async handleUp (e) {
@@ -1154,7 +1159,6 @@ export default {
       }
     },
     x (val) {
-      console.log('cur x',val);
       if (this.resizing || this.dragging) {
         return
       }
