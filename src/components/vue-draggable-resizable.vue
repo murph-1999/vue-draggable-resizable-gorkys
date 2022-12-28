@@ -845,6 +845,10 @@ export default {
               this.width = this.mouseClickPosition.w
               this.height = this.mouseClickPosition.h
               this.$emit('resizing', this.left, this.top, this.width, this.height)
+
+              // fix: 移动时的冲突检测，位置也要更新
+              this.$emit('dragging', this.left, this.top)
+
             }
           }
         }
